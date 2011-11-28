@@ -2,9 +2,8 @@
 use strict;
 use Test::More;
 
-use Alien::RRDtool;
+use RRDs;
 
-# test Alien::RRDtool here
 pass;
 
 done_testing;
