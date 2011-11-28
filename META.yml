@@ -1,0 +1,30 @@
+---
+abstract: 'Perl extention to do something'
+author:
+  - '<<YOUR NAME HERE>> <<<YOUR EMAIL ADDRESS HERE>>>'
+build_requires:
+  ExtUtils::MakeMaker: 6.62
+  Test::More: 0.88
+  Test::Requires: 0.06
+configure_requires:
+  ExtUtils::MakeMaker: 6.62
+  File::chdir: 0
+distribution_type: module
+dynamic_config: 1
+generated_by: 'Module::Install version 1.04'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: Alien::RRDtool
+name: Alien-RRDtool
+no_index:
+  directory:
+    - inc
+    - t
+    - xt
+requires:
+  perl: 5.8.1
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
