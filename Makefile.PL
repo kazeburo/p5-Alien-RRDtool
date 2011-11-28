@@ -31,10 +31,13 @@ BEGIN {
 }
 use inc::Module::Install;
 
-
 all_from 'lib/Alien/RRDtool.pm';
 
+dynamic_config(0);
+
 configure_requires 'File::chdir';
+configure_requires 'File::Which';
+configure_requires 'LWP::Simple';
 
 test_requires 'Test::More'     => '0.88';
 test_requires 'Test::Requires' => '0.06';
@@ -67,9 +70,11 @@ sub build_rrdtools {
 
     my($version) =  ( $url =~ m/(\d+ \. \d+ \. \d+)/xms );
 
-    my($xcode) = </Developer/SDKs/MacOSX*>;
+    my($dev) = </Developer/SDKs/MacOSX*>;
+    $dev ||= '';
 
-    my $libs = "-L/usr/local/lib -L$xcode/usr/lib -lxml2 -lpango-1.0 -lcairo";
+    my $libs = "-L/usr/local/lib -L$dev/usr/lib"
+             . " -lxml2 -lpango-1.0 -lpangocairo-1.0 -lcairo";
 
     makemaker_args LIBS => $libs;
 
