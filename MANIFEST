@@ -6,8 +6,6 @@ lib/Alien/RRDtool.pm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
-META.json
-META.yml
 README
 t/000_load.t
 t/001_basic.t

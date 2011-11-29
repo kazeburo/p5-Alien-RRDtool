@@ -7,7 +7,6 @@ use Module::Build::Compat;
 use File::Path qw(rmtree);
 use IO::Handle;
 
-use File::Which;
 use LWP::Simple;
 
 STDOUT->autoflush(1);
@@ -32,12 +31,12 @@ my $builder = inc::MyBuilder->new(
     },
 
     configure_requires => {
+        'File::chdir'   => 0,
         'File::Which'   => 0,
         'LWP::Simple'   => 0,
         'Module::Build' => 0,
     },
     build_requires => {
-        'File::chdir'   => 0,
     },
     test_requires => {
         'Test::More'     => 0.88,
@@ -54,7 +53,7 @@ my $builder = inc::MyBuilder->new(
         ],
     },
 
-    add_to_cleanup => [$name, "$name.tar.gz", 'Makefile'],
+    add_to_cleanup => [$name, "$name.tar.gz", 'x', 'Makefile'],
 );
 
 $builder->notes( rrdtool => $rrdtool );
