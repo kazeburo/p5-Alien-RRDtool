@@ -14,3 +14,5 @@ xt/pod.t
 xt/podcoverage.t
 xt/podspell.t
 xt/podsynopsis.t
+META.yml
+META.json
