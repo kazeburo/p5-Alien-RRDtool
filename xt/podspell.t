@@ -17,8 +17,10 @@ $ENV{LC_ALL} = 'C';
 all_pod_files_spelling_ok('lib');
 
 __DATA__
-<<YOUR NAME HERE>>
-<<YOUR EMAIL ADDRESS HERE>>
+gfuji
+gfx
+goro
+fuji
 Alien::RRDtool
 
 # computer terms
