@@ -5,13 +5,12 @@ use warnings;
 
 our $VERSION = '0.01';
 
-
 1;
 __END__
 
 =head1 NAME
 
-Alien::RRDtool - Perl extention to do something
+Alien::RRDtool - Installation of Perl bindings to RRDtool
 
 =head1 VERSION
 
@@ -19,23 +18,18 @@ This document describes Alien::RRDtool version 0.01.
 
 =head1 SYNOPSIS
 
-    use Alien::RRDtool;
+    use RRDs; # see RRDtool documentation
 
 =head1 DESCRIPTION
 
-# TODO
-
-=head1 INTERFACE
-
-=head2 Functions
-
-=head3 C<< hello() >>
-
-# TODO
+This distribution installs F<RRDs.pm> and F<RRDp.pm> for you.
 
 =head1 DEPENDENCIES
 
 Perl 5.8.1 or later.
+
+RRDtool depends on pkg-config, gettext, glib, xml2, pango and  cairo.
+You shuould install those libraries by yourself with a package manager.
 
 =head1 BUGS
 
@@ -45,15 +39,19 @@ to cpan-RT.
 
 =head1 SEE ALSO
 
-L<perl>
+L<http://oss.oetiker.ch/rrdtool/>
+
+L<RRDs>
+
+L<RRDp>
 
 =head1 AUTHOR
 
-<<YOUR NAME HERE>> E<lt><<YOUR EMAIL ADDRESS HERE>>E<gt>
+Fuji, Goro (gfx) E<lt>gfuji(at)cpan.orgE<gt>;
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2011, <<YOUR NAME HERE>>. All rights reserved.
+Copyright (c) 2011, Fuji, Goro (gfx). All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
