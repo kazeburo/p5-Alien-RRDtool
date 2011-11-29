@@ -26,36 +26,35 @@ rename "$name-$version" => $name;
 print "# witing Makefile\n";
 my $builder = inc::MyBuilder->new(
     module_name => 'Alien::RRDtool',
-    license     => 'perl',
-    dist_author => 'Fuji, Goro <fuji.goro@dena.jp>',
 
     requires    => {
         perl => 5.008_001,
     },
 
     configure_requires => {
-        'File::chdir'   => 0,
+        'File::Which'   => 0,
         'LWP::Simple'   => 0,
-        'Probe::Perl'   => 0,
         'Module::Build' => 0,
     },
     build_requires => {
+        'File::chdir'   => 0,
     },
     test_requires => {
-        'Test::More' => 0.88,
+        'Test::More'     => 0.88,
         'Test::Requires' => 0.06,
-    },
-    no_index => {
-        directory =>  [
-            $name,
-            'x',
-            'inc',
-            'author',
-            'benchmark',
-        ],
     },
 
     needs_compiler => 1,
+
+    no_index => {
+        directory =>  [
+            'x',
+            'inc',
+            'author',
+        ],
+    },
+
+    add_to_cleanup => [$name, "$name.tar.gz", 'Makefile'],
 );
 
 $builder->notes( rrdtool => $rrdtool );

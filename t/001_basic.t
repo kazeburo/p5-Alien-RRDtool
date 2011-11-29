@@ -2,7 +2,7 @@
 use strict;
 use Test::More;
 
-use RRDs;
+use Alien::RRDtool;
 
 pass;
 
