@@ -24,5 +24,7 @@ cover_db*
 *.gcno
 *.gcov
 *.stackdump
-rrdtool-*
+rrdtool*
 x
+_build
+Build

@@ -66,5 +66,7 @@
 nytprof
 MYMETA\.yml$
 ^x/
-^rrdtool-\d+\.\d+\.\d+/
+^rrdtool/
+\.tar\.gz$
+
 
