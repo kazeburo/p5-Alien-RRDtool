@@ -24,6 +24,9 @@ This document describes Alien::RRDtool version 0.01.
 
 This distribution installs F<RRDs.pm> and F<RRDp.pm> for you.
 
+NOTES: This distribution doesn't install rrdtool itself yet, as
+other Alien::* dists do, but it does so in a future.
+
 =head1 DEPENDENCIES
 
 Perl 5.8.1 or later.
