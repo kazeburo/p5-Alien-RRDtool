@@ -3,7 +3,6 @@ Alien-RDDtool-*
 !.gitignore
 !.shipit
 !.dim.pl
-inc/
 *.o
 *.obj
 *.bs
