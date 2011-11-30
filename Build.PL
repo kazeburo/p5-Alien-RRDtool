@@ -29,6 +29,8 @@ my $builder = inc::MyBuilder->new(
 
     requires    => {
         perl => 5.008_001,
+
+        'File::ShareDir' => 0,
     },
 
     configure_requires => {
@@ -38,11 +40,14 @@ my $builder = inc::MyBuilder->new(
         'Module::Build' => 0,
     },
     build_requires => {
+        'File::ShareDir' => 0,
     },
     test_requires => {
         'Test::More'     => 0.88,
         'Test::Requires' => 0.06,
     },
+
+    #share_dir => 'share',
 
     needs_compiler => 1,
 
@@ -54,12 +59,13 @@ my $builder = inc::MyBuilder->new(
         ],
     },
 
-    add_to_cleanup => [$name, "$name.tar.gz", 'x', 'Makefile'],
+    add_to_cleanup => [$name, "$name.tar.gz", 'Makefile'],
 );
 
-$builder->notes( rrdtool => $rrdtool );
-$builder->notes( name    => $name    );
-$builder->notes( version => $version );
+$builder->notes( rrdtool    => $rrdtool );
+$builder->notes( name       => $name    );
+$builder->notes( version    => $version );
+$builder->notes( installdir => $builder->blib . '/rrdtool' );
 
 $builder->create_build_script();
 

@@ -18,16 +18,15 @@ sub xsystem {
     system(@args) == 0 or croak "Failed to system(@args): $!";
 }
 
-sub ACTION_build {
+sub ACTION_code {
     my($self, @args) = @_;
 
-    my $prefix = Cwd::abs_path('x');
-    rmtree $prefix;
-    mkdir $prefix;
+    my $prefix = Cwd::abs_path( $self->notes('installdir') );
+    mkpath($prefix);
     {
         local $CWD = $self->notes('name');
 
-        local $ENV{PERL} = which($^X);
+        local $ENV{PERL} = $self->perl;
         local $ENV{CC}   = $self->maybe_ccache();
         xsystem(
             './configure',
@@ -45,6 +44,7 @@ sub ACTION_build {
         ) unless -f 'Makefile';
 
         xsystem($Config{make});
+        xsystem($Config{make}, 'install');
     }
 
     my @libdirs = (
