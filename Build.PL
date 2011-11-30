@@ -61,7 +61,6 @@ my $builder = inc::MyBuilder->new(
 
     no_index => {
         directory =>  [
-            'x',
             'inc',
             'author',
         ],

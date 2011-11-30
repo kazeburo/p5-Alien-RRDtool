@@ -1,5 +1,8 @@
 Revision history for Perl extension Alien::RRDtool
 
+0.01_02 2011-12-01 01:01:22
+    - Include rrdtool.tar.gz in the dist
+
 0.01_01 2011-12-01 00:20:42
     - original version; created by dim
       at Mon Nov 28 22:04:16 2011.
