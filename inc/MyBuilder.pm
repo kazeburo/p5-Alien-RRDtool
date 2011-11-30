@@ -1,6 +1,6 @@
 package inc::MyBuilder;
 use strict;
-use warnings;
+use warnings FATAL => 'all';
 use parent qw(Module::Build);
 
 use Fatal qw(open);
@@ -21,8 +21,9 @@ sub xsystem {
 sub ACTION_code {
     my($self, @args) = @_;
 
-    my $prefix = Cwd::abs_path( $self->notes('installdir') );
+    my $prefix    = $CWD . '/' . $self->notes('installdir');
     mkpath($prefix);
+
     {
         local $CWD = $self->notes('name');
 
@@ -64,14 +65,17 @@ sub ACTION_code {
         join ' ', (map { "-L$_" } @libdirs),  $libs;
     };
 
-    my $rpath = $self->notes('name') . '/src/.libs';
+    my $rpath = Cwd::abs_path($self->notes('name') . '/src/.libs') or die;
 
     $self->perl_bindings(sub {
-        xsystem($^X, 'Makefile.PL', "RPATH=$rpath", "LIBS=$libs");
+        xsystem($self->perl,
+            'Makefile.PL',
+            "LIBS=$libs",
+            "RPATH=$rpath");
         xsystem($Config{make});
     });
 
-    $self->SUPER::ACTION_build(@args);
+    $self->SUPER::ACTION_code(@args);
 }
 
 sub ACTION_test {
@@ -83,6 +87,7 @@ sub ACTION_test {
 
     $self->SUPER::ACTION_test(@args);
 }
+
 
 sub ACTION_install {
     my($self, @args) = @_;
