@@ -31,6 +31,7 @@ print "# witing Makefile\n";
 my $builder = inc::MyBuilder->new(
     module_name => 'Alien::RRDtool',
     dist_author => 'Fuji, Goro (gfx) <gfuji(at)cpan.org>',
+    license     => 'perl',
 
     requires    => {
         perl => 5.008_001,
