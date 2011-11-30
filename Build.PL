@@ -68,7 +68,6 @@ my $builder = inc::MyBuilder->new(
 
     add_to_cleanup => [
         $name,
-        "$name.tar.gz",
         'Makefile',
         'alien',
         'blib',
