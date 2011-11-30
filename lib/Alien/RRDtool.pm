@@ -22,10 +22,29 @@ This document describes Alien::RRDtool version 0.01.
 
 =head1 DESCRIPTION
 
-This distribution installs F<RRDs.pm> and F<RRDp.pm> for you.
+This distribution installs F<RRDs.pm> for you.
 
 NOTES: This distribution doesn't install rrdtool itself yet, as
 other Alien::* dists do, but it does so in a future.
+
+=head1 INSTALL
+
+First, you must install the following C libraries which RRDtool depends on:
+
+    pkg-config
+    gettext
+    glib
+    xml2
+    pango
+    cairo
+
+Some of them might be installed by default.
+
+Second, you can install this distribution by C<cpanm>:
+
+    cpanm https://github.com/gfx/p5-Alien-RRDtool/tarball/master
+
+Then, you can use the C<RRDs> module.
 
 =head1 DEPENDENCIES
 
@@ -45,8 +64,6 @@ to cpan-RT.
 L<http://oss.oetiker.ch/rrdtool/>
 
 L<RRDs>
-
-L<RRDp>
 
 =head1 AUTHOR
 
