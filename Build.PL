@@ -53,7 +53,7 @@ my $builder = inc::MyBuilder->new(
         'Test::Requires' => 0.06,
     },
 
-    #share_dir => 'share',
+    share_dir => 'alien',
 
     needs_compiler => 1,
 
@@ -65,13 +65,19 @@ my $builder = inc::MyBuilder->new(
         ],
     },
 
-    add_to_cleanup => [$name, "$name.tar.gz", 'Makefile'],
+    add_to_cleanup => [
+        $name,
+        "$name.tar.gz",
+        'Makefile',
+        'alien',
+        'blib',
+    ],
 );
 
 $builder->notes( rrdtool    => $rrdtool );
 $builder->notes( name       => $name    );
 $builder->notes( version    => $version );
-$builder->notes( installdir => $builder->blib . '/rrdtool' );
+$builder->notes( installdir => 'alien' );
 
 $builder->create_build_script();
 

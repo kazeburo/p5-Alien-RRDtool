@@ -18,6 +18,10 @@ sub xsystem {
     system(@args) == 0 or croak "Failed to system(@args): $!";
 }
 
+sub ACTION_manpages {
+    # doesn't create man pages
+}
+
 sub ACTION_code {
     my($self, @args) = @_;
 
