@@ -24,6 +24,6 @@ cover_db*
 *.gcov
 *.stackdump
 rrdtool*
-x
 _build
 Build
+MANIFEST
