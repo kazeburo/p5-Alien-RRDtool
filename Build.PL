@@ -57,6 +57,8 @@ my $builder = inc::MyBuilder->new(
 
     needs_compiler => 1,
 
+    #dist_meta => 1, # create META.*
+
     no_index => {
         directory =>  [
             'x',

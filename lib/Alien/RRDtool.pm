@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.01_01';
 
 use File::ShareDir qw(dist_dir);;
 use File::Spec;
@@ -47,7 +47,7 @@ Alien::RRDtool - Installation of Perl bindings to RRDtool
 
 =head1 VERSION
 
-This document describes Alien::RRDtool version 0.01.
+This document describes Alien::RRDtool version 0.01_01.
 
 =head1 SYNOPSIS
 
