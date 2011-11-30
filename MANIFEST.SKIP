@@ -65,7 +65,7 @@
 \.o(?:|bj|ld|ut)$
 nytprof
 MYMETA\.yml$
-^x/
+^alien/
 ^rrdtool/
 \.tar\.gz$
 
