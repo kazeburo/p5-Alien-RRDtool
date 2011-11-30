@@ -67,7 +67,6 @@ nytprof
 MYMETA\.yml$
 ^alien/
 ^rrdtool/
-\.tar\.gz$
 
 \.swp$
 
