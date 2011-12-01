@@ -10,10 +10,6 @@ use File::Spec;
 
 use constant prefix => dist_dir('Alien-RRDtool');
 
-sub bin {
-    return File::Spec->catfile(prefix, 'bin');
-}
-
 sub include {
     return File::Spec->catfile(prefix, 'include');
 }
@@ -24,18 +20,6 @@ sub lib {
 
 sub share {
     return File::Spec->catfile(prefix, 'share');
-}
-
-sub rrdtool {
-    return File::Spec->catfile(__PACKAGE__->bin, 'rrdtool');
-}
-
-sub rrdcached {
-    return File::Spec->catfile(__PACKAGE__->bin, 'rrdcached');
-}
-
-sub rrdupdate {
-    return File::Spec->catfile(__PACKAGE__->bin, 'rrdupdate');
 }
 
 1;
