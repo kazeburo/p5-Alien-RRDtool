@@ -1,5 +1,8 @@
 Revision history for Perl extension Alien::RRDtool
 
+0.02 2011-12-01 23:43:29
+    - Install rrd* commands to perl's bin/
+
 0.01_04 2011-12-01 01:20:59
     - Re-packaging
 
