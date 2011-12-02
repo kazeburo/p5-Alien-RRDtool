@@ -57,7 +57,7 @@ my $builder = inc::MyBuilder->new(
 
     needs_compiler => 1,
 
-    #dist_meta => 1, # create META.*
+    dist_meta => 1, # to make `cpanm .` happy
 
     no_index => {
         directory =>  [
