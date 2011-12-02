@@ -28,6 +28,7 @@ sub ACTION_code {
     my $prefix    = $CWD . '/' . $self->notes('installdir');
     mkpath($prefix);
 
+    my $bindir = $self->install_destination('bin');
     {
         local $CWD = $self->notes('name');
 
@@ -37,6 +38,7 @@ sub ACTION_code {
             './configure',
 
             "--prefix=$prefix",
+            "--bindir=$bindir",
             "--enable-perl-site-install",
 
             "--disable-tcl",

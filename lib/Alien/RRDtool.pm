@@ -3,16 +3,12 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.01_04';
+our $VERSION = '0.02';
 
 use File::ShareDir qw(dist_dir);;
 use File::Spec;
 
 use constant prefix => dist_dir('Alien-RRDtool');
-
-sub bin {
-    return File::Spec->catfile(prefix, 'bin');
-}
 
 sub include {
     return File::Spec->catfile(prefix, 'include');
@@ -26,18 +22,6 @@ sub share {
     return File::Spec->catfile(prefix, 'share');
 }
 
-sub rrdtool {
-    return File::Spec->catfile(__PACKAGE__->bin, 'rrdtool');
-}
-
-sub rrdcached {
-    return File::Spec->catfile(__PACKAGE__->bin, 'rrdcached');
-}
-
-sub rrdupdate {
-    return File::Spec->catfile(__PACKAGE__->bin, 'rrdupdate');
-}
-
 1;
 __END__
 
@@ -47,7 +31,7 @@ Alien::RRDtool - Installation of Perl bindings to RRDtool
 
 =head1 VERSION
 
-This document describes Alien::RRDtool version 0.01_04.
+This document describes Alien::RRDtool version 0.02.
 
 =head1 SYNOPSIS
 
