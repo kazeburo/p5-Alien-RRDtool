@@ -59,7 +59,7 @@ Some of them might be installed by default.
 
 Second, you can install this distribution by C<cpanm>:
 
-    cpanm https://github.com/gfx/p5-Alien-RRDtool/tarball/master
+    cpanm Alien::RRDtool
 
 Then, you can use the C<RRDs> module.
 
