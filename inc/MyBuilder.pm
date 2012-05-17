@@ -22,7 +22,7 @@ sub ACTION_manpages {
     # doesn't create man pages
 }
 
-sub ACTION_code {
+sub ACTION_code { # default action
     my($self, @args) = @_;
 
     my $prefix    = $CWD . '/' . $self->notes('installdir');
@@ -86,6 +86,8 @@ sub ACTION_code {
 
 sub ACTION_test {
     my($self, @args) = @_;
+
+    $self->ACTION_code();
 
     $self->perl_bindings(sub {
         xsystem($Config{make}, 'test');
