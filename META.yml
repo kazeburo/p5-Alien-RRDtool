@@ -11,7 +11,7 @@ configure_requires:
   LWP::Simple: 0
   Module::Build: 0
 dynamic_config: 1
-generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112621'
+generated_by: 'Module::Build version 0.4, CPAN::Meta::Converter version 2.120630'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,10 +24,10 @@ no_index:
 provides:
   Alien::RRDtool:
     file: lib/Alien/RRDtool.pm
-    version: 0.01_04
+    version: 0.03
 requires:
   File::ShareDir: 1.00
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01_04
+version: 0.03
