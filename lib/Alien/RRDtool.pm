@@ -54,6 +54,7 @@ First, you must install the following C libraries which RRDtool depends on:
     xml2
     pango
     cairo
+    XQuartz (for MacOSX)
 
 Some of them might be installed by default.
 
