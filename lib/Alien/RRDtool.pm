@@ -39,7 +39,9 @@ This document describes Alien::RRDtool version 0.03.
 
 =head1 DESCRIPTION
 
-This distribution installs F<RRDs.pm> for you.
+This distribution installs F<RRDs.pm> on perls.
+The RRDtool package will install RRDs.pm to the system perl, but there're cases
+we need to install it to perls installded by ourselves.
 
 NOTES: This distribution doesn't install rrdtool itself yet, as
 other Alien::* dists do, but it does so in a future.
