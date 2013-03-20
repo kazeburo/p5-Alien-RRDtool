@@ -36,6 +36,7 @@ sub ACTION_code { # default action
 
         local $ENV{PERL} = $self->perl;
         local $ENV{CC}   = $self->maybe_ccache();
+        local $ENV{PKGCONFIG} = which('pkg-config') or die "no pkg-config(1) found in path.\n";
         local $ENV{PKG_CONFIG_PATH} = '/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig';
         xsystem(
             './configure',
