@@ -14,6 +14,13 @@ use File::Find;
 use File::chdir;
 use File::Which;
 
+my @pkg_config_path = qw(
+    /usr/local/lib/pkgconfig
+    /usr/lib/pkgconfig
+    /opt/X11/lib/pkgconfig
+);
+
+
 sub xsystem {
     my(@args) = @_;
     print "->> ", join(' ', @args), "\n";
@@ -37,7 +44,7 @@ sub ACTION_code { # default action
         local $ENV{PERL} = $self->perl;
         local $ENV{CC}   = $self->maybe_ccache();
         local $ENV{PKGCONFIG} = which('pkg-config') or die "no pkg-config(1) found in path.\n";
-        local $ENV{PKG_CONFIG_PATH} = '/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig';
+        local $ENV{PKG_CONFIG_PATH} = join(':', @pkg_config_path);
         xsystem(
             './configure',
 
@@ -140,16 +147,6 @@ sub maybe_ccache {
 
 sub find_libdirs {
     my @dirs = qw(/usr/local/lib /opt/X11/lib);
-    return @dirs;
-    find {
-        wanted => sub {
-            return unless m{/lib$};
-            push @dirs, $_;
-        },
-        no_chdir => 1,
-    }, first { -d } '/Applications/Xcode.app/Contents//Developer/Platforms/MacOSX.platform/Developer/SDKs', '/Developer/SDKs',
-       ;
-    use Data::Dumper; print Dumper \@dirs;
     return @dirs;
 }
 
