@@ -31,6 +31,11 @@ my $version = do {
 print "# rrdtool version $version\n";
 symlink "$name-$version" => $name;
 
+if (-e (my $patch = "patch/v$version.patch")) {
+    print "# applying $patch\n";
+    system("cd '$name' && patch -p1 < '../$patch'");
+}
+
 print "# witing Makefile\n";
 my $builder = inc::MyBuilder->new(
     module_name => 'Alien::RRDtool',
