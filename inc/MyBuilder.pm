@@ -115,6 +115,14 @@ sub ACTION_install {
     $self->SUPER::ACTION_install(@args);
 }
 
+sub ACTION_clean {
+    my($self, @args) = @_;
+
+    # work around Module::Build's bug that removing symlinks might fail
+    unlink('rrdtool');
+    $self->SUPER::ACTION_clean(@args);
+}
+
 sub perl_bindings {
     my($self, $block) = @_;
     for my $path(
