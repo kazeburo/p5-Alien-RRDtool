@@ -77,8 +77,8 @@ my $builder = inc::MyBuilder->new(
 
     add_to_cleanup => [
         $name,
+        "$name-$version",
         'Makefile',
-        'alien',
         'blib',
     ],
 );
