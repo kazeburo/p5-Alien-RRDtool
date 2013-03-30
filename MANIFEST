@@ -8,6 +8,7 @@ MANIFEST			This list of files
 MANIFEST.SKIP
 META.json
 META.yml
+patch/v1.4.7.patch
 README.pod
 rrdtool.tar.gz
 t/000_load.t
