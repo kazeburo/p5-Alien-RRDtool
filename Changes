@@ -1,9 +1,12 @@
 Revision history for Perl extension Alien::RRDtool
 
+0.05 2013-03-31 23:26:59
+    - Do not override PKG_CONFIG_PATH for one to set it (thanks to kazeburo)
+
 0.04 2013-03-30 23:51:44
     - Apply patch to work RRDtool 1.4.7 on MacOSX 10.8 (kazeburo)
       see https://github.com/oetiker/rrdtool-1.x/issues/374
-    - set PKGCONFIG_PATH for homebrew-ed pkg-config(1)
+    - set PKG_CONFIG_PATH for homebrew-ed pkg-config(1)
 
 0.03 2012-05-17 14:39:23
     - Ship with RRDTool 1.4.7
