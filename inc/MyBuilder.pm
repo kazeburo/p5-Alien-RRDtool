@@ -42,9 +42,9 @@ sub ACTION_code { # default action
         local $CWD = $self->notes('name');
 
         local $ENV{PERL} = $self->perl;
-        local $ENV{CC}   = $self->maybe_ccache();
-        local $ENV{PKGCONFIG} = which('pkg-config') or die "no pkg-config(1) found in path.\n";
-        local $ENV{PKG_CONFIG_PATH} = join(':', @pkg_config_path);
+        local $ENV{CC}   = $ENV{CC} || $self->maybe_ccache();
+        local $ENV{PKGCONFIG} = ($ENV{PKGCONFIG} || which('pkg-config')) or die "no pkg-config(1) found in path.\n";
+        local $ENV{PKG_CONFIG_PATH} = join(':', (split /:/, $ENV{PKG_CONFIG_PATH} || ''), @pkg_config_path);
         xsystem(
             './configure',
 
