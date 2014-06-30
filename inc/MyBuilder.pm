@@ -16,6 +16,7 @@ use File::Which;
 
 my @pkg_config_path = qw(
     /usr/local/lib/pkgconfig
+    /usr/lib64/pkgconfig
     /usr/lib/pkgconfig
     /opt/X11/lib/pkgconfig
 );
