@@ -1,5 +1,8 @@
 Revision history for Perl extension Alien::RRDtool
 
+0.06 2014-06-30 13:09:13
+    - add /usr/lib64/pkgconfig to default PKG_CONFIG_PATH (kazeburo)
+
 0.05 2013-03-31 23:26:59
     - Do not override PKG_CONFIG_PATH for one to set it (thanks to kazeburo)
 
